@@ -12,7 +12,7 @@ app.UseEndpoints(endpoints =>
         string fileName = context.Request.RouteValues["fileName"]?.ToString();
         return context.Response.WriteAsync($"File name: {fileName}");
     });
-    endpoints.Map("/employee/{employeeName}/{employeeId}", (context) =>
+    endpoints.Map("/employee/{employeeName}/{employeeId:int?}", (context) =>
     {
         string employeeName = context.Request.RouteValues["employeeName"]?.ToString();
         string employeeId = context.Request.RouteValues["employeeId"]?.ToString();
